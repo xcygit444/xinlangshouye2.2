@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		//去重
+		var   arr=[6,56,6,98,98,64,384,68,49,49,49,82];
+		//1
+		Array.prototype.quchong1=function () {
+			var n=[];
+			for (var i = 0; i < this.length; i++) {
+				if (n.indexOf(this[i])==-1) {
+					n.push(this[i]);
+				}
+			}
+			return n;
+		}
+		console.log(arr.quchong1());
+		//2
+		Array.prototype.quchong2=function () {
+			var n=[this[0]];
+			for (var i = 1; i < this.length; i++) {
+				if (this.indexOf(this[i])==i) {
+					n.push(this[i]);
+				}
+				
+			}
+			return n;
+		}
+		console.log(arr.quchong2())
+		
+		
+		
+		//排序
+		var arr2=[49,984,8,98,31,53,56,54,21,654,53,12];
+		function count (arr2,m,n) {
+			var temp=arr2[m];
+			arr2[m]=arr2[n];
+			arr2[n]=temp;
+		}
+		//1
+		function paixu1 (arr2) {
+			for (var m = 0; m < arr2.length-1; m++) {
+				for (var n = 0; n < arr2.length-1-m; n++) {
+					if (arr2[n]>arr2[n+1]) {
+						count(arr2,n,n+1);
+					}					
+				}				
+			}
+		}
+		paixu1 (arr2);
+		console.log(arr2);
+		//2
+		function paixu2 (arr2) {
+			for (var m = 0; m < arr2.length-1; m++) {  
+				for (var n = m+1; n < arr2.length; n++) {
+					if (arr2[m]>arr2[n]) {
+						count(arr2,m,n);
+					}
+				}
+			}			
+		}
+		
+		paixu2(arr2);
+		console.log(arr2);
+
+		
+	</script>
+</html>

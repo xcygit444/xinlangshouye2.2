@@ -1,0 +1,20 @@
+<a href="#" onClick="javascript:history.go(-1)">返回上一层</a>
+<a href="#" onClick="javascript:history.back(-1)">返回上一层</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
